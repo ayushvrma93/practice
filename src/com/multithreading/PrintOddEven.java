@@ -50,7 +50,7 @@ public class PrintOddEven {
 
         PrintOddEven printOddEven = new PrintOddEven(20);
 
-        Thread thread1 = new Thread(() -> printOddEven.printOdd());
+        Thread thread1 = new Thread(printOddEven::printOdd);
 
         Thread thread2 = new Thread(() -> printOddEven.printEven());
 
