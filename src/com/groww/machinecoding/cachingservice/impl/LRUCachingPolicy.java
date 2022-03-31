@@ -5,7 +5,7 @@ import com.groww.machinecoding.cachingservice.entities.Pair;
 
 import java.util.*;
 
-public class LRUCachingPolicy implements ICachingPolicy {
+public class LRUCachingPolicy implements ICachingPolicy<String, String> {
 
     private static final LRUCachingPolicy INSTANCE = new LRUCachingPolicy(10);
 
@@ -26,6 +26,16 @@ public class LRUCachingPolicy implements ICachingPolicy {
 
     @Override
     public String get(String key) {
+
+        if(availableElements.containsKey(key)){
+
+            if(!elements.peekLast().getKey().equals(key)){
+                Pair removePair = new Pair(key, availableElements.get(key));
+                elements.remove(removePair);
+                elements.addFirst(removePair);
+            }
+        }
+
         return availableElements.get(key);
     }
 
@@ -33,13 +43,15 @@ public class LRUCachingPolicy implements ICachingPolicy {
     @Override
     public void put(Pair entry) {
 
-        if(availableElements.size() == SIZE){
+        if(!availableElements.containsKey(entry.getKey())){
 
-            if(!availableElements.containsKey(entry.getKey())){
+            if(availableElements.size() == SIZE) {
                 Pair old = elements.removeLast();
                 String oldKey = old.getKey();
                 availableElements.remove(oldKey);
-            } else {
+            }
+        } else{
+            if(availableElements.containsKey(entry.getKey())){
                 elements.remove(entry);
             }
         }

@@ -32,6 +32,15 @@ public class SumOfNodesAtMaxDepth {
         return sum;
     }
 
+    public int getSumAtMaxDepth(TreeNode root){
+
+        if(root == null) return 0;
+
+        if(root.left == null && root.right == null) return root.data;
+
+        return getSumAtMaxDepth(root.left) + getSumAtMaxDepth(root.right);
+    }
+
 
     public static void main(String[] args) {
 
@@ -40,7 +49,10 @@ public class SumOfNodesAtMaxDepth {
         TreeNode tree1 = Tree.getNotHeightBalancedTree();
         TreeNode tree2 = Tree.getTreeForSumAtMaxDepth();
 
-        System.out.println(sumOfNodes.getSum(tree1));
-        System.out.println(sumOfNodes.getSum(tree2));
+        //System.out.println(sumOfNodes.getSum(tree1));
+        //System.out.println(sumOfNodes.getSum(tree2));
+
+        System.out.println(sumOfNodes.getSumAtMaxDepth(tree1));
+        System.out.println(sumOfNodes.getSumAtMaxDepth(tree2));
     }
 }

@@ -15,7 +15,7 @@ public class CacheManager implements ICaching {
     public String get(User user, String key) {
          EvictionPolicy evictionPolicy = getCachingPolicyByUser(user.getId());
          ICachingPolicy cachingPolicy = getPolicy(evictionPolicy);
-         return cachingPolicy.get(key);
+         return (String) cachingPolicy.get(key);
     }
 
     @Override
