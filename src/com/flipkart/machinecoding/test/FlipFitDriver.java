@@ -65,10 +65,14 @@ public class FlipFitDriver {
         else {System.out.println(availableSlots);}
 
         System.out.println("Booking weights seat for user Ayush:");
-        System.out.println(userManager.book("Marathalli", 1, 1, WorkOutType.WEIGHTS));
+        System.out.println(userManager.book("Marathalli", 1, 1, WorkOutType.SWIMMING));
 
-//        System.out.println("Booking weights seat for user Aman:");
-//        System.out.println(userManager.book("Marathalli", 2, 1, WorkOutType.WEIGHTS));
+        try {
+            System.out.println("Booking weights seat for user Aman:");
+            System.out.println(userManager.book("Marathalli", 2, 1, WorkOutType.SWIMMING));
+        } catch (Exception e){
+            System.out.println("Could not book for user" + e.getMessage());
+        }
 
 //        System.out.println("Booking swimming seat for user:");
 //        System.out.println(userManager.book("Marathalli", 1, 2, WorkOutType.SWIMMING));
@@ -77,7 +81,7 @@ public class FlipFitDriver {
         System.out.println(userManager.viewUserBooking(1, DateUtils.parse("2022-04-07")));
 
         System.out.println("View User booking: ");
-        System.out.println(userManager.viewUserBooking(1, DateUtils.parse("2022-04-07")));
+        System.out.println(userManager.viewUserBooking(2, DateUtils.parse("2022-04-07")));
 
         System.out.println("Cancel booking: ");
         System.out.println(userManager.cancelSlot("Marathalli", 1, 1, WorkOutType.WEIGHTS));
@@ -145,6 +149,6 @@ public class FlipFitDriver {
 
         FlipFitDriver flipFitDriver = new FlipFitDriver();
         flipFitDriver.generalTesting();
-        flipFitDriver.loadTesting();
+        //flipFitDriver.loadTesting();
     }
 }

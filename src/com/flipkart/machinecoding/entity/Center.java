@@ -88,7 +88,7 @@ public class Center {
 
     public Booking book(int userId, int slotId, WorkOutType workOutType) throws BusinessException {
 
-        Slot slot = getById(slotId);
+        Slot slot = getSlotById(slotId);
         Booking booked = null;
 
         if(slot == null){
@@ -108,7 +108,7 @@ public class Center {
         return daysClosed.stream().noneMatch(currDay -> currDay.equals(day));
     }
 
-    private Slot getById(int slotId){
+    private Slot getSlotById(int slotId){
 
         for(var entry : dateAndSlots.entrySet()){
 
@@ -124,7 +124,7 @@ public class Center {
 
     public Booking cancelSlot(int userId, int slotId, WorkOutType workOutType) throws BusinessException {
 
-        Slot slot = getById(slotId);
+        Slot slot = getSlotById(slotId);
         Booking booked = null;
 
         if(slot == null){
@@ -148,7 +148,7 @@ public class Center {
 
 
     public Date getDateForSlot(int slotId){
-        Slot slot = getById(slotId);
+        Slot slot = getSlotById(slotId);
         for(var entry : dateAndSlots.entrySet()){
             List<Slot> currDateSlots = entry.getValue();
 

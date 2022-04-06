@@ -2,7 +2,6 @@ package com.flipkart.machinecoding;
 
 import com.flipkart.machinecoding.entity.Booking;
 import com.flipkart.machinecoding.entity.Center;
-import com.flipkart.machinecoding.entity.Slot;
 import com.flipkart.machinecoding.entity.User;
 import com.flipkart.machinecoding.entity.enums.WorkOutType;
 

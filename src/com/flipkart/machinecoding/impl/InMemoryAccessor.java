@@ -14,6 +14,16 @@ import static com.flipkart.machinecoding.Constants.Misc.ONE_HOUR;
 
 public class InMemoryAccessor implements IDataAccessor {
 
+    /*
+        interface IDataAccessor{
+            IDataAccessor getInstance => instance of data storage type(in_Memory accessor);
+
+            getInstanceOfInMemoryDataAccessor(Type) =>
+
+
+        }
+     */
+
     private static final IDataAccessor INSTANCE = new InMemoryAccessor();
 
     private Map<String, Center> nameAndCenter = new HashMap<>();

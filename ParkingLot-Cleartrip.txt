@@ -1,0 +1,106 @@
+We have Designed a Parking Lot.
+
+No of floors
+Types of vehicles
+Ticket management system- 
+Slot types
+Multiple entries and exists
+Parking lot for electric vehicles
+
+
+
+Class ParkingLot{
+
+	Int id;
+	String name;
+	Address address;
+	List<ParkingFloor>
+	List<Gate>
+	TicketManagementSystem
+
+
+}
+
+Class ParkingFloor{
+
+	Int id;
+	List<Slot>
+	Int capacity;
+	Boolean isFloorFull;
+
+	Slot getCurrentOpenSlot(Vehicle)
+	Slot freeSlot(Slot)
+}
+
+Class Slot{
+	
+	Int id;
+	SlotType => CAR, TRUCK
+	Double length;
+	Double breadth;
+	SlotStatus => AVAILABLE, OCCUPIED, UNDER_MAINTENANCE
+}
+
+
+Abstract class Vehicle{
+	
+	Int id;
+	VehicleType => CAR, TRUCK
+	FuelType => ELECTRIC, PETROL, DIESEL,CNG
+	String registrationNumber;
+	Int capacity;
+	List<People>
+	
+}
+
+Class Car{
+	
+}
+
+Class Truck{
+
+
+}
+
+Abstract class People{
+
+	Int id;
+String name;
+String phoneNumber;
+String email;
+}
+
+
+Class Driver extends People{
+
+	License;
+	Ticket;
+
+	
+}
+
+Class Ticket{
+	
+	Int id;
+	String vehicleRegNo;
+	assignedSlot;
+}
+
+Class Gate{
+	Int id;
+	GateType => Entry, Exit
+}
+
+
+interface ITicketManagementSystem{
+
+	Ticket issueTicket(Gate, Vehicle, List<AdditionalRequirement>);
+	vehicleCheckOut(Vehicle, Gate);
+
+
+	
+}
+
+Class TicketManagementSystem implements ITicketManagementSystem{
+
+}
