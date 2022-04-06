@@ -10,10 +10,11 @@ public class Utility {
         System.out.println();
     }
 
-    public static void printIntegerArray(Integer[] arr){
 
-        for (int i : arr) {
-            System.out.print(i + ", ");
+    public static <T> void printArray(T[] arr){
+
+        for (T t : arr) {
+            System.out.print(t + ", ");
         }
         System.out.println();
     }

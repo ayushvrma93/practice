@@ -53,6 +53,6 @@ public class SortAnArray {
         Integer[] arr1 = {2,6,4,3,9};
 
         Integer[] result1 = sortAnArray.sort(arr1);
-        Utility.printIntegerArray(result1);
+        Utility.printArray(result1);
     }
 }
