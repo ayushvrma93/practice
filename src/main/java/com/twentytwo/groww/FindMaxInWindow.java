@@ -1,8 +1,6 @@
 package com.twentytwo.groww;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class FindMaxInWindow {
 
@@ -41,6 +39,35 @@ public class FindMaxInWindow {
             result.add(pq.peek());
             i++;
             j++;
+        }
+        return result;
+    }
+
+    public List<Integer> byN(int[] arr, int k){
+
+        Deque<Integer> dq = new LinkedList<>();
+        int i = 0;
+        List<Integer> result = new ArrayList<>();
+
+        while(!dq.isEmpty() && i<k && arr[dq.peekLast()] <= arr[i]){
+            dq.removeLast();
+        }
+        dq.addLast(i);
+        i++;
+
+        while(i<arr.length) {
+
+            result.add(dq.peekFirst());
+
+            while (!dq.isEmpty() && i < arr.length && dq.peek() <= i-k){
+                dq.removeFirst();
+            }
+
+            while(!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]){
+                dq.removeLast();
+            }
+            dq.addLast(i);
+            i++;
         }
         return result;
     }
