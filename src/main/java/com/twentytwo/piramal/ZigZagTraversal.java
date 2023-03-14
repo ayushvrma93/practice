@@ -1,5 +1,6 @@
 package com.twentytwo.piramal;
 
+import com.twentytwo.tree.Tree;
 import com.twentytwo.tree.TreeNode;
 
 import java.util.ArrayList;
@@ -19,34 +20,41 @@ public class ZigZagTraversal {
 
         stack1.push(root);
 
-        while (!stack1.isEmpty()){
+        while(!stack1.isEmpty() || !stack2.isEmpty()) {
 
-            TreeNode curr = stack1.pop();
-            result.add(curr.data);
+            while (!stack1.isEmpty()) {
 
-            if(ltr){
-                if(curr.left != null){
-                    stack2.push(curr.left);
-                }
-                if(curr.right != null){
-                    stack2.push(curr.right);
+                TreeNode curr = stack1.pop();
+                result.add(curr.data);
+
+                if (ltr) {
+                    if (curr.left != null) {
+                        stack2.push(curr.left);
+                    }
+                    if (curr.right != null) {
+                        stack2.push(curr.right);
+                    }
+                } else {
+                    if (curr.right != null) {
+                        stack2.push(curr.right);
+                    }
+                    if (curr.left != null) {
+                        stack2.push(curr.left);
+                    }
                 }
             }
-
-            else{
-                if(curr.right != null){
-                    stack2.push(curr.right);
-                }
-                if(curr.left != null){
-                    stack2.push(curr.left);
-                }
-            }
-
             Stack<TreeNode> temp = stack1;
             stack1 = stack2;
             stack2 = temp;
             ltr = !ltr;
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+
+        ZigZagTraversal zigZagTraversal = new ZigZagTraversal();
+        TreeNode root = Tree.getCompleteBinaryTree();
+        System.out.println(zigZagTraversal.getTraversal(root));
     }
 }

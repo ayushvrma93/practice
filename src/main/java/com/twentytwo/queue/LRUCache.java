@@ -5,10 +5,10 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
-public class LRUCache {
+public class LRUCache<T> {
 
-    private Deque<Integer> doublyLinkedList;
-    private Set<Integer> hashSet;
+    private Deque<T> doublyLinkedList;
+    private Set<T> hashSet;
     private final int CACHE_SIZE;
 
     LRUCache(int size){
@@ -18,15 +18,15 @@ public class LRUCache {
 
     }
 
-    public Deque<Integer> getDoublyLinkedList(){
+    public Deque<T> getDoublyLinkedList(){
         return doublyLinkedList;
     }
 
-    public void implement(int page){
+    public void implement(T page){
 
         if(!hashSet.contains(page)){
             if(doublyLinkedList.size() == CACHE_SIZE){
-                int last = doublyLinkedList.removeLast();
+                T last = doublyLinkedList.removeLast();
                 hashSet.remove(last);
             }
             hashSet.add(page);

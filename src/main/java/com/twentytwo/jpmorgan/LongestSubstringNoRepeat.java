@@ -10,17 +10,19 @@ public class LongestSubstringNoRepeat {
         Map<Character, Integer> occurrence = new HashMap<>();
         int currLength = 0;
         int maxLength = 0;
+        int start = 0;
 
         char[] chars = str.toCharArray();
 
         for(int i=0; i<chars.length; i++){
 
-            if(!occurrence.containsKey(chars[i])){
-                currLength++;
+            if(occurrence.containsKey(chars[i])){
+                start = Math.max(start, occurrence.get(chars[i])+1);
+                currLength = i - start + 1;
             }
 
             else{
-                currLength = i - occurrence.get(chars[i]);
+                currLength++;
             }
             occurrence.put(chars[i], i);
             maxLength = Math.max(maxLength, currLength);

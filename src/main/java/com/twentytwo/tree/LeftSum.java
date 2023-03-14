@@ -13,5 +13,10 @@ public class LeftSum {
         return sumLeftLeaves(root.left) + sumLeftLeaves(root.right);
     }
 
+    public static void main(String[] args) {
 
+        LeftSum leftSum = new LeftSum();
+        TreeNode root = Tree.getNonSymmetricalTree();
+        System.out.println(leftSum.sumLeftLeaves(root));
+    }
 }

@@ -63,7 +63,6 @@ public class JsonParser {
             List<JsonObject> currJson = json.getOption();
 
             getAllNamesUtil(currJson, result);
-
         }
     }
 

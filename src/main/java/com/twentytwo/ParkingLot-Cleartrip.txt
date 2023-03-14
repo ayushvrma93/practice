@@ -17,8 +17,6 @@ Class ParkingLot{
 	List<ParkingFloor>
 	List<Gate>
 	TicketManagementSystem
-
-
 }
 
 Class ParkingFloor{
@@ -93,12 +91,8 @@ Class Gate{
 
 
 interface ITicketManagementSystem{
-
 	Ticket issueTicket(Gate, Vehicle, List<AdditionalRequirement>);
 	vehicleCheckOut(Vehicle, Gate);
-
-
-	
 }
 
 Class TicketManagementSystem implements ITicketManagementSystem{
