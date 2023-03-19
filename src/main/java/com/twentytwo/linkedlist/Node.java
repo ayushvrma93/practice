@@ -7,7 +7,7 @@ public class Node {
     public int data;
     public Node next;
 
-    Node(int data){
+    public Node(int data){
         this.data = data;
     }
 
@@ -85,6 +85,18 @@ public class Node {
             newListPtr = newListPtr.next;
         }
         return newHead.next;
+    }
+
+    public static Node getNNodeList(int length){
+        Node head = new Node(0);
+        Node ptr = head;
+
+
+        for(int i=1; i<length; i++){
+            ptr.next = new Node(i);
+            ptr = ptr.next;
+        }
+        return head;
     }
 
 }

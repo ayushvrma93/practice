@@ -2,30 +2,30 @@ package com.twentytwo.groww.machinecoding.cachingservice.entities;
 
 import java.util.Objects;
 
-public class Pair {
+public class Pair<K,V> {
 
-    private String key;
-    private String value;
+    private K key;
+    private V value;
 
 
-    public Pair(String key, String value) {
+    public Pair(K key, V value) {
         this.key = key;
         this.value = value;
     }
 
-    public String getKey() {
+    public K getKey() {
         return key;
     }
 
-    public void setKey(String key) {
+    public void setKey(K key) {
         this.key = key;
     }
 
-    public String getValue() {
+    public V getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(V value) {
         this.value = value;
     }
 
