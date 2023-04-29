@@ -73,6 +73,32 @@ public class CalendarMeetings {
         return mergedList;
     }
 
+    private int correctWay(List<Pair> slots){
+
+        //slots.sort(Comparator.comparingInt(o->o.start));
+        slots.sort((o1, o2) -> {
+            if(o1.start==o2.start)return o1.end-o2.end;
+            return o1.start-o2.start;
+        });
+        int total=0;
+        int min = slots.get(0).start;
+        int max = slots.get(0).end;
+        for(Pair pair : slots){
+
+            if(max>pair.start && max>pair.end){continue;}
+            else if(max>pair.start&&max<pair.end){
+                max=pair.end;
+            }else if(max<pair.start){
+                total+=(max-min)+1;
+                min = pair.start;
+                max=pair.end;
+            }
+        }
+        total+=(max-min)+1;
+        return total;
+
+    }
+
     public List<Pair> getEmptySlots(List<Pair> slots){
         List<Pair> mergedList =  mergeSimilarStartTime(slots);
         System.out.println("After merging with similar start time" + mergedList);
@@ -100,5 +126,6 @@ public class CalendarMeetings {
         slots.add(pair6);
 
         System.out.println(calendarMeetings.getEmptySlots(slots));
+        System.out.println(calendarMeetings.correctWay(slots));
     }
 }
