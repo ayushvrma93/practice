@@ -18,7 +18,6 @@ public class RottenOranges {
 
 
     public int orangesRotting(int[][] grid, int m, int n, int res) {
-
         if(m<0 || n<0) return Integer.MAX_VALUE;
 
         if(grid[m][n] == 0) return 0;
@@ -26,7 +25,6 @@ public class RottenOranges {
         grid[m][n] = Math.min(orangesRotting(grid, m-1, n, res+1), orangesRotting(grid, m, n-1, res+1));
 
         return res;
-
     }
 
     public static void main(String[] args) {

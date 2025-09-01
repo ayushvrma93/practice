@@ -7,7 +7,6 @@ public class IsSymmetricalTree {
     }
 
     private boolean isSymmetricalUtil(TreeNode r1, TreeNode r2){
-
         if(r1 == null && r2 == null)
             return true;
 

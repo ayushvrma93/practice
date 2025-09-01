@@ -28,7 +28,6 @@ public class LRUCachingPolicy<K,V> implements ICachingPolicy {
     public V get(Object key) {
 
         if(availableElements.containsKey(key)){
-
             if(!elements.peekLast().getKey().equals(key)){
                 Pair removePair = new Pair(key, availableElements.get(key));
                 elements.remove(removePair);

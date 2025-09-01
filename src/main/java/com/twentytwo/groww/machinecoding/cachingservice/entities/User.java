@@ -1,13 +1,14 @@
 package com.twentytwo.groww.machinecoding.cachingservice.entities;
 
 import com.twentytwo.groww.machinecoding.cachingservice.enums.EvictionPolicy;
+import lombok.Data;
 
+@Data
 public class User {
 
     private int id;
     private String name;
     private EvictionPolicy evictionPolicy;
-
 
     public int getId() {
         return id;

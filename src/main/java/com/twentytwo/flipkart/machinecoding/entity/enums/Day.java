@@ -16,7 +16,7 @@ public enum Day {
     SATURDAY(7);
 
 
-    private int value;
+    private final int value;
 
     public final static Map<Integer, Day> dayAndNo = stream(Day.values()).collect(toMap(day -> day.value, day -> day));
 

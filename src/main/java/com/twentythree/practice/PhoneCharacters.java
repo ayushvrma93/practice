@@ -87,7 +87,7 @@ public class PhoneCharacters {
         String digits2 = "234";
         String digits3 = "2";
 
-        //System.out.println(phoneCharacters.getPossibleStrings(charactersForInt, digits1, 0));
+        System.out.println(phoneCharacters.getPossibleStrings(charactersForInt, digits1));
         //System.out.println(phoneCharacters.getPossibleStrings(charactersForInt, digits2, 0));
         phoneCharacters.getPossibleStrings(charactersForInt, digits2);
         System.out.println(result);

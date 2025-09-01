@@ -60,8 +60,8 @@ public class LowestUniqueBid {
                 }
             }
         if(isAlreadyAvailable) {
-            int occurence = newOcc.getOcc() + 1;
-            occVsInputPq.add(new OccAndInput(occurence, newOcc.getAmount(), newOcc.getPlayersList()));
+            int occurrence = newOcc.getOcc() + 1;
+            occVsInputPq.add(new OccAndInput(occurrence, newOcc.getAmount(), newOcc.getPlayersList()));
         } else {
             List<String> players = new ArrayList<>();
             players.add(input.getPlayerName());
