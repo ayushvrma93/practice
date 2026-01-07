@@ -51,6 +51,12 @@ public class NewestFirstStrategy implements ITimeLineGenerationStrategy{
         return true;
     }
 
+    /**
+     * Retrieves the timeline for a specific user.
+     * 
+     * @param user the user whose timeline is to be retrieved
+     * @return a deque of posts in the user's timeline, or null if no timeline exists for the user
+     */
     @Override
     public Deque<Post> getTimeLineForUser(User user) {
         return userAndPosts.get(user);
