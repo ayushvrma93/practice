@@ -18,6 +18,13 @@ public class Driver {
     //this should come from Factory Design Pattern
     private static ITimeLineGenerationStrategy timeLineGenerationStrategy = NewestFirstStrategy.getINSTANCE();
 
+    /**
+     * Main entry point for the newsfeed application demonstration.
+     * Creates sample users, demonstrates user login, following functionality,
+     * post creation, and timeline generation using the configured strategy.
+     * 
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
 
         User u1 = new User("u1", "u1@gmail.com");
