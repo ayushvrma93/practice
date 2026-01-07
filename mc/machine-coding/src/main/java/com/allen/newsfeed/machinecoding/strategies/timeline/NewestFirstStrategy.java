@@ -24,6 +24,15 @@ public class NewestFirstStrategy implements ITimeLineGenerationStrategy{
 
     private Map<User, Deque<Post>> userAndPosts = new HashMap<>();
 
+    /**
+     * Generates timeline for followers of the given user by adding the post to their timelines.
+     * Uses newest-first strategy where new posts are added to the front of the timeline.
+     *
+     * @param user the user who created the post
+     * @param post the post to be added to followers' timelines
+     * @return true if the post was successfully added to at least one follower's timeline, false if user has no followers
+     * @throws UserNotExistsException if the specified user does not exist in the system
+     */
     @Override
     public boolean generateTimeLineForUser(User user, Post post) throws UserNotExistsException{
 
