@@ -9,6 +9,12 @@ import com.allen.newsfeed.machinecoding.models.User;
 import com.allen.newsfeed.machinecoding.strategies.timeline.ITimeLineGenerationStrategy;
 import com.allen.newsfeed.machinecoding.strategies.timeline.NewestFirstStrategy;
 
+/**
+ * Driver class for the newsfeed machine coding implementation.
+ * This class serves as the main entry point to demonstrate the functionality
+ * of the newsfeed system including user management, post creation, and timeline generation.
+ * It showcases user interactions such as following other users and viewing personalized timelines.
+ */
 public class Driver {
 
     private static IUserManager userManager = UserManagerImpl.getINSTANCE();
