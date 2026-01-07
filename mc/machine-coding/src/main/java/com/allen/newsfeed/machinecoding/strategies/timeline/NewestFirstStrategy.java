@@ -8,6 +8,16 @@ import com.allen.newsfeed.machinecoding.models.Post;
 import com.allen.newsfeed.machinecoding.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * Timeline generation strategy that orders posts in newest-first chronological order.
+ * <p>
+ * This strategy implements a push-based timeline generation where posts are immediately
+ * distributed to followers' timelines when created, with the newest posts appearing first.
+ * Uses a singleton pattern to ensure a single instance throughout the application.
+ * </p>
+ * 
+ * @author Allen
+ */
 import java.util.*;
 
 public class NewestFirstStrategy implements ITimeLineGenerationStrategy{
