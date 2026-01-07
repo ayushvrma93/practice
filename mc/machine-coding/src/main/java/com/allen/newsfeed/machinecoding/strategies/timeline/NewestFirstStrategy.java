@@ -16,6 +16,12 @@ public class NewestFirstStrategy implements ITimeLineGenerationStrategy{
 
     private NewestFirstStrategy(){}
 
+    /**
+     * Returns the singleton instance of NewestFirstStrategy.
+     * This method implements the singleton pattern to ensure only one instance exists.
+     *
+     * @return the singleton instance of ITimeLineGenerationStrategy
+     */
     public static ITimeLineGenerationStrategy getINSTANCE() {
         return INSTANCE;
     }
